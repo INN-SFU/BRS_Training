@@ -1,33 +1,53 @@
 """
-Script: generate_bdi_scores.py
+Script: generate_bdi_scores_CL.py
 
 Description:
     This script computes total BDI scores for each subject and writes a subject-specific TSV file.
-    It filters the dataset to include only subjects listed in a present_subjects.tsv file.
+    It filters the dataset to include only subjects listed in a user-specified subject list file.
+    Allows the user to specify the output directory for generated files.
+
 
 Inputs:
     - BDI input TSV file
         e.g., /project/ctb-rmcintos/jwangbay/DO_NOT_USE_THIS_OR_jwangbay_OUTSIDE_OF_TRAINING/data-sets/BRS/assessments/desc-summary_date-20250721_bdigad.tsv
-    - List of present subject IDs (e.g., sub-BRS0034), one per line:
-        ~/scratch/BRS_subset/present_subjects.tsv
+    - List of subject IDs (e.g., sub-BRS0034), one per line:
+    - Output directory path for saving results
+
 
 Outputs:
-    - One TSV per subject in:
-        ~/scratch/BRS_subset/mood_outputs/
+    - One TSV per subject in the specified output directory
       Format: <QID1>_bdi_score.tsv (e.g., BRS0034_bdi_score.tsv)
       Content: Two columns — QID1, BDI_score
 
+
+Usage:
+    python generate_bdi_scores_CL.py <bdi_input_tsv> <present_subs_tsv> <output_dir>
+
+
+Example:
+    python generate_bdi_scores_CL.py \
+        /project/data/desc-summary_date-20250721_bdigad.tsv \
+        ~/scratch/BRS_subset/present_subs.tsv \
+        ~/scratch/BRS_subset/mood_outputs
+
+
 Author: Leanne Rokos
-Date: 23-07-2025
+Date: 13-08-2025
 """
 
 import os
 import pandas as pd
+import sys
 
-# === User-defined paths and settings ===
-input_path = os.path.expanduser("/project/ctb-rmcintos/jwangbay/DO_NOT_USE_THIS_OR_jwangbay_OUTSIDE_OF_TRAINING/data-sets/BRS/assessments/desc-summary_date-20250721_bdigad.tsv")  # MODIFY
-present_subjects_path = os.path.expanduser("~/scratch/BRS_subset/present_subjects.tsv")  # MODIFY
-output_dir = os.path.expanduser("~/scratch/BRS_subset/mood_outputs")  # MODIFY
+# === Check command-line arguments & set initial variables ===
+if len(sys.argv) != 4:
+    print("Usage: python generate_bdi_scores_CL.py <bdi_input_tsv> <present_subs_tsv> <output_dir>")
+    sys.exit(1)
+
+input_path = os.path.expanduser(sys.argv[1])
+present_subjects_path = os.path.expanduser(sys.argv[2])
+output_dir = os.path.expanduser(sys.argv[3])
+
 subject_id_col = 'QID1'  # Column name for subject IDs
 
 # === Create output directory if it doesn't exist ===
@@ -69,7 +89,7 @@ unmatched = present_ids - actual_ids
 if unmatched:
     print(f"Warning: {len(unmatched)} subject IDs in present_subjects.tsv were not found in the BDI data.")
     for uid in sorted(unmatched):
-        print(f" {uid}")
+        print(f" - sub-{uid}")
 
 # === Define function to compute total BDI score ===
 def compute_bdi_score(df):
