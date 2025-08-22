@@ -13,4 +13,4 @@ subject_list=($(cat /project/ctb-rmcintos/jwangbay/DO_NOT_USE_THIS_OR_jwangbay_O
 SUB="${subject_list[$((SLURM_ARRAY_TASK_ID-1))]}"
 
 # Run Python script for this subject
-python ~/scratch/BRS_Training/2_process_one_subject.py "$SUB" # TO DO CHANGE THIS BACK TO BRS_TRAINING
+python ~/scratch/BRS_Training/2_process_one_subject.py "$SUB"
