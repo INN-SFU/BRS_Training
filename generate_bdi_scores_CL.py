@@ -89,7 +89,7 @@ unmatched = present_ids - actual_ids
 if unmatched:
     print(f"Warning: {len(unmatched)} subject IDs in present_subjects.tsv were not found in the BDI data.")
     for uid in sorted(unmatched):
-        print(f" - sub-{uid}")
+        print(f" - {uid}")
 
 # === Define function to compute total BDI score ===
 def compute_bdi_score(df):
