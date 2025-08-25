@@ -10,4 +10,4 @@
 module load scipy-stack
 
 # Run the Python script
-python ~/scratch/BRS_Training/1_process_all_subjects.py
+python ~/scratch/BRS_Training/job_submission_scripts/1_process_all_subjects.py
