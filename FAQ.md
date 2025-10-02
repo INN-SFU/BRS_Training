@@ -9,9 +9,9 @@
 
 ## Questions & Answers
 
-## Contribute to the FAQ
+### Contribute to the FAQ
 
-If you don't see your question here or if you'd like to contribute a FAQ, please create and submit a [new issue](https://github.com/INN-SFU/BRS_Training/issues/new/choose). Thank you!
+If you don't see your question here or if you'd like to contribute a FAQ, please create and submit it as a [new issue](https://github.com/INN-SFU/BRS_Training/issues/new/choose). We'll respond to your question and post it here as soon as we can. Thank you!
 
 ### I can't access the project directory
 
