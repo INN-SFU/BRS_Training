@@ -7,6 +7,12 @@ Frequently Asked Questions can be found [here](FAQ.md).
 
 <br>
 
+### Slides
+
+You can find PDFs of slides for each week's content under [PPT_slides](PPT_slides)
+
+<br>
+
 ### Cloning this repository
 
 1. Log into Cedar
