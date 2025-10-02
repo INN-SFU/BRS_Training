@@ -3,6 +3,8 @@
 
 This is the repository for the BRS Training Sessions. You can find the notebook for [Week 2: Computing on Cedar](Training_Session_Notebook.ipynb). 
 
+Frequently Asked Questions can be found [here](FAQ.md).
+
 <br>
 
 ### Cloning this repository
