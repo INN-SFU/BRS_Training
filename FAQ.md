@@ -3,7 +3,9 @@
 ## Quick Links
 - [I don't see my question here. How do I ask a question or contribute a FAQ?](#contribute-to-the-FAQ)
 - [I can't access the project directory](#i-cant-access-the-project-directory)
-- [I can't get in Cedar](#i-cant-get-in-cedar)
+- [I can't sign into Cedar](#i-cant-sign-into-cedar)
+- [My connection to Fir timed out](#my-connection-to-fir-timed-out)
+
 
 ---
 
@@ -17,6 +19,10 @@ If you don't see your question here or if you'd like to contribute a FAQ, please
 
 Make sure that the path you are trying to access begins with `/project/ctb-rmcintos`. You won't find the project directory from your home directory (`~`).
 
-### I can't get in Cedar
+### I can't sign into Cedar
 
-Cedar is being decommissioned and replaced with [Fir](https://docs.alliancecan.ca/wiki/Fir). Please use `fir.alliancecan.ca` instead of `cedar.computecanada.ca`.
+As of September 2025, Cedar has been decommissioned and replaced with [Fir](https://docs.alliancecan.ca/wiki/Fir). Please use `fir.alliancecan.ca` instead of `cedar.computecanada.ca` or `cedar.alliancecan.ca`.
+
+### My connection to Fir timed out
+
+Fir can experience network connectivity issues from time to time. You can check on the status of Fir [here](https://status.alliancecan.ca/system/Fir) and try again later.
